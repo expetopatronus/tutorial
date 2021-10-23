@@ -62,3 +62,7 @@ pre {
 code {
 	font-family: monospace;
 }
+
+li, li a{
+	color: lightblue;
+}
