@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat Posisi Div di Tengah Secara Vertikal dan Horizontal</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<h1>Membuat Posisi Div di Tengah Secara Vertikal dan Horizontal</h1>
+		<img src="Screenshot at 2021-10-23 10-50-09.png">
+		
+		<p><i>Gimana sih caranya agar posisi suatu element selalu supaya berada di tengah secara vertikal maupun horizontal?</i></p>
+		<p><b>Me</b>: <i>Hmm, good question.</i></p>
+		<p>Setau <b>Me</b> ini ada dua teknik. Yaitu teknik <code>display: flex</code> dan <code>position: absolute</code>. Mari kita coba satu-satu.</p>
+
+		<h2 style="color: #eee">A. display: flex</h2>
+		<p>Pertama <code>display: flex</code> adalah teknik yang paling sering digunakan oleh pengembang website yang skillnya sudah tinggi. Jika ingin tahu tentang <code>display: flex</code> kalian bisa mengunjungi <a href="https://www.w3schools.com/css/css_display_visibility.asp">w3school.com</a>.</p>
+		<p><b>1. Buat file html</b> <br>Isi kan file html yang telah kalian buat dengan kode berikut:
+		<br><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Tutorial&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class=&quot;kotak&quot;&gt;
+		&lt;div class=&quot;lingkaran&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></p>
+		<p><b>2. Buat file <i>style.css</i> di folder yang sama</b> <br>Kita tandai dulu mana yang class kotak dan mana yang kelas lingkaran dengan cara memberi warna dan ukuran. Berikut untuk memberikan style pada class kotak: </p><pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+}</pre> 
+		<p>berikut hasilnya: <br><img src="Screenshot at 2021-10-23 10-18-04.png"><br>Sekarang buat style untuk yang lingkaran: <br> <pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+}
+
+.lingkaran {
+	height: 100px;
+	width: 100px;
+	background: blue;
+	border-radius: 50%;
+}</pre> </p>
+		<p>berkut hasilnya: <br><img src="Screenshot at 2021-10-23 10-25-40.png"></p>
+		<p><b>3. Ditengah secara horizontal</b> <br> Untuk menengahkan elemen secara horizontal kita harus menambah <code>display: flex</code> di class yang luar, yakni class kotak: <br><pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+	display: flex;
+}</pre></p>
+		<p>Sekarang kita posisikan ke tengah secara horizontal, dengan menambahkan <code>justify-content: center;</code> di class kotak: <br><pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+	display: flex;
+	justify-content: center;
+}</pre></p>
+		<p>Jika kalian cek maka posisi lingkaran sudah berada di tengah secara horizontal. <img src="Screenshot at 2021-10-23 10-42-54.png"></p>
+		<p><b>4. Secara vertical</b> <br>Sekarang kita buat agar berada di tengah secara vertical, dengan cara di class kotak tambahkan <code>align-items: center;</code> <br><pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}</pre></p>
+		<img src="Screenshot at 2021-10-23 10-50-09.png">
+		<p>Hore... Berhasil kan? Oke tutorialnya cukup sampai disi aja dulu.</p>
+		<p><i>Tapi bang.. yang position absolute kan belum..</i></p>
+		<p><b>Me: </b><i>besok :)</i></p>
+
+		<br><br>
+		<hr>
+		<form class="form-bordered" action="http://aansuseno.000webhostapp.com/web/kirimpesan" method="post">
+				<h2 style="color: #fff">Kirim saran</h2>
+				<p><small>Silakan kirim request tutorial, saran-saran, kirtik, menghubungi saya >///<, tanya-tanya, dan lain-lain. Saya jamin keamanan dan anonimus pesan.</small></p>
+			    <p>Saran: </p>
+			    <textarea class="form-control" rows="4" name="pesan"></textarea>
+			    <br><br>
+			    <p>Email: (opsional)</p>
+			    <input class="form-control" type="email" name="email"/>
+			    <br><br>
+			    <button type="submit" id="submit_button" class="btn">Kirim</button>
+		</form>
+	</div>
+</body>
+</html>
