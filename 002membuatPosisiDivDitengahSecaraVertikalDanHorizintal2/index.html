@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat Posisi Div di Tengah Secara Vertikal dan Horizontal Pt 2</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<h1>Membuat Posisi Div di Tengah Secara Vertikal dan Horizontal-bagian 2</h1>
+		<img src="Screenshot at 2021-10-23 10-50-09.png">
+		<br><br><br><br>
+		<p><i>Sudah malam bang, kok belum upload..?</i></p>
+		<p><b>Me</b>: <i>Oke, sabar ngab</i></p>
+
+		<p>Sekarang mari kita bahas cara membuat posisi div di tengah secara vertikal dan horizontal menggunakan teknik <code>position: absolute;</code>. Apa sih kegunaan dari <code>position: absolute;</code>? Yaitu untuk meletakkan posisi secara bertumpuk. Untuk lebih lengkapnya kalian bisa cek di <a href="w3school.com">w3school.com</a>. Untuk tutorial ini kita akan fokus ke topik.</p>
+
+		<br><br><br>
+		<h2 style="color: #eee">B. position: absolute</h2>
+		<br>
+		<p><b>1. Buat file <i>index.html</i> dan <i>style.css</i> dalam direktori yang sama.</b></p>
+		<p>index.html :<br><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Tutorial&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class=&quot;kotak&quot;&gt;
+		&lt;div class=&quot;lingkaran&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></p>
+		<p>style.css: <br><pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+}
+
+.lingkaran {
+	height: 100px;
+	width: 100px;
+	background: blue;
+	border-radius: 50%;
+}</pre></p>
+		<img src="Screenshot at 2021-10-23 10-25-40.png">
+		<p>Mirip dengan cara pertama bukan? Next..</p>
+		<br><br>
+		<p><b>2. Tambahkan properti <code>position: absolute</code> di class kotak dan class lingkaran</b></p>
+		<p>Maka kode style.css jadi seperti berikut: <br><pre>.kotak {
+	height: 400px;
+	width: 400px;
+	background: yellow;
+	position: absolute; /* <- tambahkan*/
+}
+
+.lingkaran {
+	height: 100px;
+	width: 100px;
+	background: blue;
+	border-radius: 50%;
+	position: absolute; /* <- tambahkan*/
+}</pre></p>
+		<p>Tunggu dulu. Memang belum ada perubahan, hehe</p>
+		<br><br>
+		<p><b>3. Tambahkan jarak atas dan kiri class lingkaran</b> <br> Kita akan menggunakan satuan persen untuk kasus ini.</p>
+		<p>Berikut kode di class lingkaran: <br><pre>.lingkaran {
+	height: 100px;
+	width: 100px;
+	background: blue;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%; /* <- tambahkan*/
+	left: 50%; /* <- tambahkan*/
+}</pre></p>
+		<p>Berikut adalah hasilnya: <br><img src="Screenshot at 2021-10-24 21-16-48.png"></p>
+		<p><i>Kok belum ke tengah bang?</i> Masih ada satu langkah lagi. Ini yang terakhir, semoga saja, hehe</p>
+		<br><br>
+		<p><b>4. Kita geser -50% dari ukuran object</b></p>
+		<p>Gunakan <code>transform: translate(-50%, -50%);</code> maka elemen akan geser ke kiri dengan jarak setengah dari lebar elemen, dan geser ke atas sebesar setengah dari tinggi elemen.</p>
+		<p>Berikut kodenya: <br><pre>.lingkaran {
+	height: 100px;
+	width: 100px;
+	background: blue;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%); /* <- tambahkan*/
+}</pre></p>
+		<p>Dan ini dia hasilnya:<br> <img src="Screenshot at 2021-10-23 10-50-09.png"></p>
+		<br>
+		<p>Jadi apa kesimpulannya? Enakan yang mana?</p>
+		<p>Kalau ditanya enakan mana, itu tidak bisa dijawab. Karena mereka mempunyai fungsi yang berbeda. Berikut contoh jika menggunakan teknik position absoute dengan dua elemen berada dalam blok:</p>
+		<img src="Screenshot at 2021-10-24 21-29-22.png">
+		<br>
+		<p>Dan berikut jika menggunakan teknik <code>display: flex</code> :</p>
+		<img src="Screenshot at 2021-10-24 21-31-00.png">
+		<p>Bisa dilihat kan bedanya. Jika kita menggunakan teknik <code>display: flex;</code> maka elemen tetap sejajar. Sedangkan jika menggunakan teknik <code>position: absolute;</code> elemen akan bertumpuk.</p>
+		<br><br>
+		<p>Oke sekian tutorialnya. Tanya sesuatu dong di kolom saran bawah. Biar <b>Me</b> tidak gabut, asal pertanyaan masih berada di dunia HTML, CSS, JavaScript, PHP, ya dan teman-teman mereka, pasti akan <b>Me</b> bantu jawab. Matursuwon wis mampir..</p>
+
+		<br><br>
+		<hr>
+		<form class="form-bordered" action="http://aansuseno.000webhostapp.com/web/kirimpesan" method="post">
+				<h2 style="color: #fff">Kirim saran</h2>
+				<p><small>Silakan kirim request tutorial, saran-saran, kirtik, menghubungi saya >///<, tanya-tanya, dan lain-lain. Saya jamin keamanan dan anonimus pesan.</small></p>
+			    <p>Saran: </p>
+			    <textarea class="form-control" rows="4" name="pesan"></textarea>
+			    <br><br>
+			    <p>Email: (opsional)</p>
+			    <input class="form-control" type="email" name="email"/>
+			    <br><br>
+			    <button type="submit" id="submit_button" class="btn">Kirim</button>
+		</form>
+	</div>
+</body>
+</html>
